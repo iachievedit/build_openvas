@@ -50,3 +50,10 @@ createuser -DRS gvm
 createdb -O gvm gvmd
 psql gvmd -c "create role dba with superuser noinherit; grant dba to gvm;"
 EOF
+
+cat << EOF > /etc/sudoers.d/openvas
+# allow users of the gvm group run openvas
+%gvm ALL = NOPASSWD: /usr/local/sbin/openvas
+EOF
+chmod 0440 /etc/sudoers.d/openvas
+visudo -c
