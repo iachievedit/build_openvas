@@ -18,7 +18,9 @@ SCRIPTS=($(ls $SCRIPT_DIR/*.sh | sort))
 # Loop through each script and execute it
 for SCRIPT in "${SCRIPTS[@]}"; do
   echo "Executing $SCRIPT..."
-  bash "$SCRIPT"
+  pushd scripts/
+  bash `basename $SCRIPT`
+  popd
 done
 
 echo "All scripts executed successfully."
