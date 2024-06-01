@@ -2,8 +2,17 @@
 
 A set of scripts designed to (quickly) build OpenVAS on Ubuntu 24.04.
 
-> [!WARNING]
-> This is a work in progress.
+## Quick Start
+
+```
+sudo su
+cd /tmp
+git clone https://github.com/iachievedit/build_openvas
+cd build_openvas
+./install.sh
+```
+
+Some minutes later you should have an installation of OpenVAS ready to begin vulnerability scanning.
 
 ## Notes
 
